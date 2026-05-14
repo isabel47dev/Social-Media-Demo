@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Demo Social Media - Settings</title>
+  <link rel="stylesheet" href="style2.css">
+  <!-- this is used to grab the js code and have it ensure the Js 
+  is done before running making sure it actually works as intended -->
+  <script src="settings.js" defer></script>
+</head>
+
+<body>
+<!-- NAVIGATION BAR -->
+ <nav id="navbar">
+  <div class="logo">
+    <img src="images/logo.png"alt="Logo" width="50" height="50">
+  </div> <!-- this is the logo-->
+  <!-- this code below is grabbing all the icons for the navigation
+   this sets each image to have alt text and approprate sizes
+   along with the link to take the user to there destination.
+   aria-labels and alt text are used to ensure accessability in 
+   different ways, but both to help the user in some accessable way
+   (if the user cannot see the image one of these texts will display)-->
+  <ul>
+    <li>      
+      <a href="https://isabelssologroupwork.neocities.org/IndexHome" aria-label="Home">
+        <img src="images/home-icon.png" alt="Home" width="30" height="30">
+      </a>
+    </li>
+    <li>
+      <a href="https://isabelssologroupwork.neocities.org/not_found" aria-label="Messages">
+        <img src="images/message-icon.png" alt="Messages" width="30" height="30">
+      </a>
+    </li>
+    <li>
+      <a href="https://isabelssologroupwork.neocities.org/not_found" aria-label="Create Post">
+        <img src="images/create-icon.png" alt="Create Post" width="30" height="30">
+      </a>
+    </li>
+    <li>
+      <a href="https://isabelssologroupwork.neocities.org/IndexProfile" aria-label="Profile">
+        <img src="images/profile-icon.png" alt="Profile" width="30" height="30">
+      </a>
+    </li>
+    <li>
+      <a href="https://isabelssologroupwork.neocities.org/settings" aria-label="Settings">
+        <img src="images/settings-icon.png" alt="Settings" width="30" height="30">
+      </a>
+    </li>
+  </ul>
+</nav>
+<div class="settings-layout">
+  <aside class="settings-sidebar">
+    <!-- this is the searchbar, grabbing relatent info from js and 
+    adding placeholder text for accessabily (for users to know 
+    they can write in it)-->
+    <input type="text" class="settings-search" id="settings-search" placeholder="Search for settings...">
+    <!-- this places the generated buttons from JS and puts them in-->
+    <nav class="settings-nav" id="settings-nav"></nav>
+  </aside>
+  <main class="settings-content">
+    <!-- general -->
+     <section class="settings-panel active" id="general">
+      <h1>General</h1>
+      <div class="settings-group">
+        <div class="settings-group-title">System</div>
+        <div class="settings-row">
+          <!-- this language shows you can have different type of characters that might not be in the english language like "ç" or different writting systems, in this case korean -->
+          <label>Language</label>
+          <select>
+            <option>English</option>
+            <option>Français</option> 
+            <option>Deutsch</option>
+            <option>한국인</option>
+          </select>
+        </div>
+        <div class="settings-row">
+          <label>Launch at Startup</label>
+          <input type="checkbox" class="toggle">
+        </div>
+      </div>
+    </section>
+    <!-- account -->
+    <section class="settings-panel" id="account">
+      <h1>Account</h1>
+      <div class="settings-group">
+        <div class="settings-group-title">Profile</div>
+        <div class="settings-row">
+          <label>Username</label>
+          <input type="text" value="user123">
+        </div>
+      </div>
+      <div class="settings-row">
+        <label>Email</label>
+        <!-- although this code doesnt, the required is used to show 
+         that if you want to enforce that this is an email, this is 
+         how you would go about it, eg if you were actually going to 
+         send this to database you would want this requirement to 
+         ensure it can pass validation easier-->
+        <input type="email" value="example@example.com" required>
+      </div>
+    </div>
+  </section>
+  <!-- appearance -->
+   <section class="settings-panel" id="appearance">
+    <h1>Appearance</h1>
+    <div class="settings-group">
+      <div class="settings-group-title">Theme</div>
+      <div class="settings-row">
+        <label>Dark Mode</label>
+        <input type="checkbox" class="toggle" id="theme-toggle">
+      </div>
+    </div>
+  </section>
+  <!-- security -->
+   <section class="settings-panel" id="security">
+    <h1>Security</h1>
+    <!-- this is the button that the deletes account (not really, 
+    but as a demo it does), this is why it has a different class 
+    and id because its having to have different styles and such 
+    to ensure that the user knows that this button can do 
+    irreversable damage to the account they are using (if this 
+    wasnt a demo, this code is moreso here to show how you could
+    do it, rather than actually doing it for demo purposes)-->
+    <button class="settings-button danger" id="delete-account-btn">Delete</button>
+  </section>
+</main>
+</div>
+</body>
+</html>

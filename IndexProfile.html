@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- This is used to tell the SEO and readers that this webpage is in english, so its accessable and searchable-->
+ <head>
+  <meta charset="UTF-8">
+  <!-- This is used to ensure proper character encoding is done, and also again for SEO-->
+  <title>Demo Social Media - Profile</title>
+  <!-- the title, shown in the tab for the browser, is also used for SEO/ searchablity so making it something good is important-->
+  <link rel="stylesheet" href="style2.css"> <!-- grabs the stylesheet/css from style2.css instead of just using the defult style (remember to change this name)-->
+</head>
+<body>
+  
+<!-- NAVIGATION BAR -->
+ <nav id="navbar">
+  <div class="logo">
+    <img src="images/logo.png"alt="Logo" width="50" height="50">
+  </div> <!-- this is the logo-->
+  <!-- this code below is grabbing all the icons for the navigation
+   this sets each image to have alt text and approprate sizes
+   along with the link to take the user to there destination.
+   aria-labels and alt text are used to ensure accessability in 
+   different ways, but both to help the user in some accessable way
+   (if the user cannot see the image one of these texts will display)-->
+  <ul>
+    <li>      
+      <a href="#" aria-label="Home">
+        <img src="images/home-icon.png" alt="Home" width="30" height="30">
+      </a>
+    </li>
+    <li>
+      <a href="#" aria-label="Messages">
+        <img src="images/message-icon.png" alt="Messages" width="30" height="30">
+      </a>
+    </li>
+    <li>
+      <a href="#" aria-label="Create Post">
+        <img src="images/create-icon.png" alt="Create Post" width="30" height="30">
+      </a>
+    </li>
+    <li>
+      <a href="#" aria-label="Profile">
+        <img src="images/profile-icon.png" alt="Profile" width="30" height="30">
+      </a>
+    </li>
+    <li>
+      <a href="#" aria-label="Settings">
+        <img src="images/settings-icon.png" alt="Settings" width="30" height="30">
+      </a>
+    </li>
+  </ul>
+</nav>
+<div class="container">
+  <!-- this container is used to hold everything but the navbar/menubar so that it sits below it nicely-->
+   <aside class="profile-card">
+    <!-- this creates a profile card container where the profile information like the pfp can be contained in -->
+     <div id="pfp" class="pfp-wrapper">
+      <!-- this is a containerfor the pfp  -->
+       <img src="images/pfp.jpg" alt="Users pfp">      
+       <!-- this is the image used for the pfp and again uses alt text to let the user know what it is -->
+      </div>
+      <div class="profile-info">
+        <!-- This groups user info into this container -->
+         <h2 id="username" class="editable" contenteditable="true">@username</h2>
+         <!-- because the text is contenteditable, it allows you to edit the value making it easier to see what it looks like with different values without the having to edit the code each time -->
+          <h3 id="name" class="editable" contenteditable="true">Full Name</h3>
+          <p id="bio" class="editable" contenteditable="true"> This is a short bio about the user.</p>
+          <p id="pronouns" class="editable" contenteditable="true">they/them</p>
+          <!-- Also, adding pronouns is a way to increase not only inclusivity but accessibility as it makes it easier for users who may need them -->
+           <!-- this is its on container to just hold all the number valued data, eg post count, this is done simply to make it look nicer and cleaner-->
+            <div id="counts">
+              <!-- These values are in nested spans as that then allows for editing for only the numbers and not the text -->
+               <span><span class="editable" contenteditable="true">80</span> Followers</span>
+               <span><span class="editable" contenteditable="true">67</span> Following</span>
+               <span><span class="editable" contenteditable="true">85</span> Posts</span> 
+              </div>
+              <!-- like the number values, the link section has its own to make it clearer and look nicer-->
+               <div id="links-section">
+                <div id="links"></div>
+                <!-- this is empty as all the links are added via the JS but we need this here so that the JS has somewhere to put them (this should become created by dom in the future but for now its okay as its only a demo and not a real social media) -->
+                 <button id="add-link-btn">Add Link</button>
+                 <!-- this button is used to add more links calling on the id to make the pop up and then add the link from the JS code-->
+                  <!-- TO TRY THIS FEATURE!!
+                   try putting the university accounts into the link, you will find that the icons from these websites are used and will take you to the correct location!
+                   https://www.youtube.com/@universitybrighton
+                   https://www.instagram.com/uniofbrighton/ -->
+                  
+                  
+                  
+                  
+                  
+                  
+                  </div>
+                </div>
+              </aside>
+              <main id="posts"></main>
+              <!-- the main tag is used here as the main content the user will want is the posts, not anything else-->
+               <aside class="ux-panel">
+                <!-- This creates the container for the UX panel, which is what sets it apart form a real social media as this is used to change the UX of the website on that page. as well as this the panel is using the aside tag which means that it will it aside the posts instead, which doing it this way is the more accepted way of doing it for html currently -->
+                 <h3>UX Panel</h3>
+                 <h4>Appearance</h4>
+                 <button data-theme="light">Light</button>
+                 <button data-theme="dark">Dark</button>
+                 <!-- the data-theme is used to make it easier for JS to change-->
+                  <h4>Layout</h4>
+                  <input type="number" min="1" max="5" value="1" id="posts-per-row">
+                  <!-- this input is used to set how many posts can be on one row, this is limited to 1 to 5 as that seemed to get a little too much, but not overwhelming, however the user can still change it to be higher if they so please, for whatever reason, may that be for testing or some other purpose, this is done to show that it should be limited, but show why it should be limited by not making it required in those values so the user can see why its wrong-->
+                   <h4>Profile</h4>
+                   <!--These are checkboxes that toggle whether the elements are hidden or not, using the js and css to complete this task -->
+                   <label><input type="checkbox" checked data-toggle="pfp"> Profile Image</label>
+                   <label><input type="checkbox" checked data-toggle="name"> Name</label>
+                   <label><input type="checkbox" checked data-toggle="bio"> Bio</label>
+                   <label><input type="checkbox" checked data-toggle="pronouns"> Pronouns</label>
+                   <label><input type="checkbox" checked data-toggle="username"> Username</label>
+                   <label><input type="checkbox" checked data-toggle="counts"> Counts</label>
+                   <label><input type="checkbox" checked data-toggle="links-section"> Links</label>
+                   <h4>General</h4>
+                   <label><input type="checkbox" checked data-toggle="navbar"> Navbar</label>
+                   <button id="add-post-btn">Add Post</button>
+                   <!-- this button will call the JS to create a new post for the user and do it appropriately (eg add image, text and allow for local saving) -->
+                    <button id="reset-btn">Reset</button>
+                    <!-- this resets the UX to default so you dont have to refresh, making it more optimimal-->
+                  </aside>
+  </div>
+  <script src="profileScript.js"></script>
+  <!-- this script tag grabs the JS in order to use it in completing the tasks -->
+  </body>
+</html>

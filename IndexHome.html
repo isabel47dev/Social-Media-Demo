@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- This is used to tell the SEO and readers that this webpage is in english, so its accessable and searchable-->
+ <head>
+  <meta charset="UTF-8">
+  <!-- This is used to ensure proper character encoding is done, and also again for SEO-->
+  <title>Demo Social Media - Home</title>
+  <!-- the title, shown in the tab for the browser, is also used for SEO/ searchablity so making it something good is important-->
+  <link rel="stylesheet" href="style2.css"> <!-- grabs the stylesheet/css from style2.css instead of just using the defult style (remember to change this name)-->
+</head>
+<body>
+
+<!-- NAVIGATION BAR -->
+ <nav id="navbar">
+  <div class="logo">
+    <img src="images/logo.png"alt="Logo" width="50" height="50">
+  </div> <!-- this is the logo-->
+  <!-- this code below is grabbing all the icons for the navigation
+   this sets each image to have alt text and approprate sizes
+   along with the link to take the user to there destination.
+   aria-labels and alt text are used to ensure accessability in 
+   different ways, but both to help the user in some accessable way
+   (if the user cannot see the image one of these texts will display)-->
+  <ul>
+    <li>      
+      <a href="#" aria-label="Home">
+        <img src="images/home-icon.png" alt="Home" width="30" height="30">
+      </a>
+    </li>
+    <li>
+      <a href="#" aria-label="Messages">
+        <img src="images/message-icon.png" alt="Messages" width="30" height="30">
+      </a>
+    </li>
+    <li>
+      <a href="#" aria-label="Create Post">
+        <img src="images/create-icon.png" alt="Create Post" width="30" height="30">
+      </a>
+    </li>
+    <li>
+      <a href="#" aria-label="Profile">
+        <img src="images/profile-icon.png" alt="Profile" width="30" height="30">
+      </a>
+    </li>
+    <li>
+      <a href="#" aria-label="Settings">
+        <img src="images/settings-icon.png" alt="Settings" width="30" height="30">
+      </a>
+    </li>
+  </ul>
+</nav>
+<div class="container">
+  <!-- this container is used to hold everything but the navbar/menubar so that it sits below it nicely-->
+   <main id="posts"></main>
+   <!-- the main tag is used here as the main content the user will want is the posts, not anything else-->
+    <aside class="ux-panel">
+      <!-- This creates the container for the UX panel, which is what sets it apart form a real social media as this is used to change the UX of the website on that page. as well as this the panel is using the aside tag which means that it will it aside the posts instead, which doing it this way is the more accepted way of doing it for html currently -->
+       <h3>UX Panel</h3>
+       <h4>Appearance</h4>
+       <button data-theme="light">Light</button>
+       <button data-theme="dark">Dark</button>
+       <!-- the data-theme is used to make it easier for JS to change-->
+        <h4>Layout</h4>
+        <input type="number" min="1" max="5" value="1" id="posts-per-row">
+        <!-- this input is used to set how many posts can be on one row, this is limited to 1 to 5 as that seemed to get a little too much, but not overwhelming, however the user can still change it to be higher if they so please, for whatever reason, may that be for testing or some other purpose, this is done to show that it should be limited, but show why it should be limited by not making it required in those values so the user can see why its wrong-->
+         <h4>General</h4>
+         <!--These are checkboxes that toggle whether the elements are hidden or not, using the js and css to complete this task -->
+         <label><input type="checkbox" checked data-toggle="navbar"> Navbar</label>
+         <button id="add-post-btn">Add Post</button>
+         <!-- this button will call the JS to create a new post for the user and do it appropriately (eg add image, text and allow for local saving) -->
+          <button id="reset-btn">Reset</button>
+          <!-- this resets the UX to default so you dont have to refresh, making it more optimimal-->
+    </aside>
+  </div>
+  <script src="profileScript.js"></script>
+  <!-- this script tag grabs the JS in order to use it in completing the tasks -->
+  </body>
+</html>
